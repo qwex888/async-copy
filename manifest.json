@@ -1,0 +1,44 @@
+  {
+    "manifest_version": 3,
+    "name": "async-copy",
+    "version": "0.0.1",
+    "action": {
+      "default_title": "Click to view a popup",
+      "default_popup": "popup/popup.html"
+    },
+    "description": "多平台可云同步的复制粘贴板记录插件",
+    "icons": {
+        "16": "icons/copy16.png",
+        "32": "icons/copy32.png",
+        "48": "icons/copy48.png",
+        "128": "icons/copy128.png"
+    },
+    "author": "yocat",
+    "background": {
+      "service_worker": "background/service-worker.js"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "css": [
+          "css/index.css"
+        ],
+        "js": [
+          "lib/jquery.min.js",
+          "content-scripts/content.js"
+        ]
+      }
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "permissions": [
+      "tabs"
+    ],
+    "optional_permissions": [
+      "downloads"
+    ]
+  }
