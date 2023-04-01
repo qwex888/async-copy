@@ -6,6 +6,24 @@
     <body>
         <div>
           async-copy
+          <div id="getpage">
+            <p>getBackgroundPage: </p>
+            <span></span>
+          </div>
+          ajax:
+          <div id="ajax"></div>
         </div>
     </body>
+    <script>
+      const getPage = chrome.extension.getBackgroundPage()
+      const span1 = document.querySelectorAll('#getpage span')[0]
+      span1.innerHTML = JSON.stringify(getPage)
+      // 获取一下剪贴板列表
+      $.ajax({
+        url: 'https://baidu.com',
+        success: function(res){
+          $('#ajax').text(JSON.stringify(res))
+        }
+      })
+    </script>
 </html>

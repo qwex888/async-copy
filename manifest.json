@@ -3,7 +3,7 @@
     "name": "async-copy",
     "version": "0.0.1",
     "action": {
-      "default_title": "Click to view a popup",
+      "default_title": "点击显示剪贴板历史",
       "default_popup": "popup/popup.html"
     },
     "description": "多平台可云同步的复制粘贴板记录插件",
@@ -36,8 +36,17 @@
       "https://*/*"
     ],
     "permissions": [
-      "tabs"
+      "tabs",
+      "webRequest",
+      "webRequestBlocking",
+      "storage",
+      "http://*/*",
+      "https://*/*"
+
     ],
+      "options_ui": {
+        "page": "options/options.html"
+      },
     "optional_permissions": [
       "downloads"
     ]
